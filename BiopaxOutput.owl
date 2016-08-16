@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:owl="http://www.w3.org/2002/07/owl#"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+ xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#"
+ xml:base="http://www.async.ece.utah.edu">
+<owl:Ontology rdf:about="">
+ <owl:imports rdf:resource="http://www.biopax.org/release/biopax-level3.owl#" />
+</owl:Ontology>
+
+<bp:Protein rdf:ID="/cd/GeneticToggle__TetR_aTc">
+</bp:Protein>
+
+<bp:DnaRegion rdf:about="http://www.partsregistry.org/BBa_C0012">
+</bp:DnaRegion>
+
+<bp:DnaRegion rdf:about="http://www.partsregistry.org/BBa_J61120">
+</bp:DnaRegion>
+
+<bp:DnaRegion rdf:about="http://www.partsregistry.org/BBa_E0040">
+</bp:DnaRegion>
+
+<bp:Protein rdf:ID="/cd/LacI_Inverter__GFP">
+</bp:Protein>
+
+<bp:Protein rdf:ID="/cd/TetR_Inverter__LacI">
+</bp:Protein>
+
+<bp:Protein rdf:ID="/cd/GeneticToggle__aTc">
+</bp:Protein>
+
+<bp:GeneticInteraction rdf:ID="/md/GeneticToggle/Degradation_GFP">
+</bp:GeneticInteraction>
+
+<bp:DnaRegion rdf:about="http://www.partsregistry.org/ECK120029600">
+</bp:DnaRegion>
+
+<bp:GeneticInteraction rdf:ID="/md/GeneticToggle/Complex_LacI_IPTG">
+</bp:GeneticInteraction>
+
+<bp:Pathway rdf:ID="/md/TetR_Inverter">
+ <bp:pathwayComponent rdf:resource="#/md/TetR_Inverter/P0_prod_LacI" />
+ <bp:pathwayComponent rdf:resource="#/md/TetR_Inverter/TetR_rep_P0" />
+</bp:Pathway>
+
+<bp:Protein rdf:ID="/cd/LacI_Inverter__TetR">
+</bp:Protein>
+
+<bp:Protein rdf:ID="/cd/GeneticToggle__IPTG">
+</bp:Protein>
+
+<bp:Protein rdf:ID="/cd/GeneticToggle__LacI_IPTG">
+</bp:Protein>
+
+<bp:Protein rdf:ID="/cd/GeneticToggle__LacI">
+</bp:Protein>
+
+<bp:GeneticInteraction rdf:ID="/md/GeneticToggle/Degradation_LacI_IPTG">
+</bp:GeneticInteraction>
+
+<bp:GeneticInteraction rdf:ID="/md/LacI_Inverter/pLac_prod_GFP">
+</bp:GeneticInteraction>
+
+<bp:GeneticInteraction rdf:ID="/md/GeneticToggle/Degradation_LacI">
+</bp:GeneticInteraction>
+
+<bp:GeneticInteraction rdf:ID="/md/TetR_Inverter/TetR_rep_P0">
+</bp:GeneticInteraction>
+
+<bp:GeneticInteraction rdf:ID="/md/LacI_Inverter/pLac_prod_TetR">
+</bp:GeneticInteraction>
+
+<bp:DnaRegion rdf:about="http://www.partsregistry.org/BBa_C0040">
+</bp:DnaRegion>
+
+<bp:Pathway rdf:ID="/md/LacI_Inverter">
+ <bp:pathwayComponent rdf:resource="#/md/LacI_Inverter/pLac_prod_GFP" />
+ <bp:pathwayComponent rdf:resource="#/md/LacI_Inverter/pLac_prod_TetR" />
+ <bp:pathwayComponent rdf:resource="#/md/LacI_Inverter/LacI_rep_pLac" />
+</bp:Pathway>
+
+<bp:DnaRegion rdf:about="http://www.partsregistry.org/BBa_R0010">
+</bp:DnaRegion>
+
+<bp:GeneticInteraction rdf:ID="/md/LacI_Inverter/LacI_rep_pLac">
+</bp:GeneticInteraction>
+
+<bp:DnaRegion rdf:about="http://www.partsregistry.org/BBa_J61101">
+</bp:DnaRegion>
+
+<bp:Protein rdf:ID="/cd/LacI_Inverter__LacI">
+</bp:Protein>
+
+<bp:DnaRegion rdf:ID="/TetR_Inverter_Gene/1">
+</bp:DnaRegion>
+
+<bp:DnaRegion rdf:about="http://www.partsregistry.org/BBa_J61130">
+</bp:DnaRegion>
+
+<bp:Protein rdf:ID="/cd/GeneticToggle__TetR">
+</bp:Protein>
+
+<bp:DnaRegion rdf:about="http://www.partsregistry.org/ECK120033736">
+</bp:DnaRegion>
+
+<bp:Protein rdf:ID="/cd/TetR_Inverter__TetR">
+</bp:Protein>
+
+<bp:Protein rdf:ID="/cd/GeneticToggle__GFP">
+</bp:Protein>
+
+<bp:DnaRegion rdf:ID="/LacI_Inverter_Gene/1">
+</bp:DnaRegion>
+
+<bp:DnaRegion rdf:ID="/TetR_Gene/1">
+</bp:DnaRegion>
+
+<bp:GeneticInteraction rdf:ID="/md/GeneticToggle/Degradation_TetR_aTc">
+</bp:GeneticInteraction>
+
+<bp:Pathway rdf:ID="/md/GeneticToggle">
+ <bp:pathwayComponent rdf:resource="#/md/GeneticToggle/Degradation_TetR_aTc" />
+ <bp:pathwayComponent rdf:resource="#/md/GeneticToggle/Degradation_LacI_IPTG" />
+ <bp:pathwayComponent rdf:resource="#/md/GeneticToggle/Complex_TetR_aTc" />
+ <bp:pathwayComponent rdf:resource="#/md/GeneticToggle/Degradation_LacI" />
+ <bp:pathwayComponent rdf:resource="#/md/GeneticToggle/Degradation_TetR" />
+ <bp:pathwayComponent rdf:resource="#/md/GeneticToggle/Degradation_GFP" />
+ <bp:pathwayComponent rdf:resource="#/md/GeneticToggle/Complex_LacI_IPTG" />
+</bp:Pathway>
+
+<bp:DnaRegion rdf:ID="/GFP_Gene/1">
+</bp:DnaRegion>
+
+<bp:GeneticInteraction rdf:ID="/md/GeneticToggle/Complex_TetR_aTc">
+</bp:GeneticInteraction>
+
+<bp:GeneticInteraction rdf:ID="/md/TetR_Inverter/P0_prod_LacI">
+</bp:GeneticInteraction>
+
+<bp:DnaRegion rdf:about="http://www.partsregistry.org/BBa_R0040">
+</bp:DnaRegion>
+
+<bp:GeneticInteraction rdf:ID="/md/GeneticToggle/Degradation_TetR">
+</bp:GeneticInteraction>
+</rdf:RDF>

@@ -24,121 +24,136 @@ import org.biopax.paxtools.model.BioPAXElement;
 import org.biopax.paxtools.model.BioPAXFactory;
 import org.biopax.paxtools.model.BioPAXLevel;
 import org.biopax.paxtools.model.Model;
+import org.biopax.paxtools.model.level2.physicalEntity;
 import org.biopax.paxtools.model.level3.BiochemicalReaction;
 import org.biopax.paxtools.model.level3.Complex;
 import org.biopax.paxtools.model.level3.DnaRegion;
+import org.biopax.paxtools.model.level3.Entity;
 import org.biopax.paxtools.model.level3.GeneticInteraction;
 import org.biopax.paxtools.model.level3.Interaction;
 import org.biopax.paxtools.model.level3.Pathway;
+import org.biopax.paxtools.model.level3.Process;
 import org.biopax.paxtools.model.level3.Protein;
 import org.biopax.paxtools.model.level3.Rna;
 import org.biopax.paxtools.model.level3.SmallMolecule;
 import org.sbolstandard.core2.ComponentDefinition;
 import org.sbolstandard.core2.FunctionalComponent;
+import org.sbolstandard.core2.Module;
 import org.sbolstandard.core2.ModuleDefinition;
+import org.sbolstandard.core2.Participation;
 import org.sbolstandard.core2.SBOLConversionException;
 import org.sbolstandard.core2.SBOLDocument;
 import org.sbolstandard.core2.SBOLValidationException;
+
+/*
+ * @authors Meher Samineni, Michael Zhang, Zach Zundel
+ */
 
 public class SBOLToBioPaxConverter {
 	private static BioPAXFactory factory = null;
 	private static Model model = null;
 
-	public static void main(String[] args) throws SBOLValidationException, IOException, SBOLConversionException, URISyntaxException {
+	public static void main(String[] args)
+			throws SBOLValidationException, IOException, SBOLConversionException, URISyntaxException {
 		SBOLToBioPaxConversion("GeneticToggleSBOL.xml");
 	}
-	
-	public static void SBOLToBioPaxConversion(String fileToRead) throws SBOLValidationException, IOException, SBOLConversionException, URISyntaxException
-	{
-		//accept file to read into a buffer
+
+	public static void SBOLToBioPaxConversion(String fileToRead)
+			throws SBOLValidationException, IOException, SBOLConversionException, URISyntaxException {
+		// accept file to read into a buffer
 		InputStream resourceAsStream = SBOLToBioPaxConverter.class.getResourceAsStream(fileToRead);
 		if (resourceAsStream == null)
 			resourceAsStream = SBOLToBioPaxConverter.class.getResourceAsStream("/" + fileToRead);
 
 		assert resourceAsStream != null : "Failed to find test resource '" + fileToRead + "'";
-		
-		//create an SBOL Document and set initial data fields
-		String prURI="http://www.async.ece.utah.edu";
+
+		// create an SBOL Document and set initial data fields
+		String prURI = "http://www.async.ece.utah.edu";
 		SBOLDocument doc = new SBOLDocument();
 		doc.setDefaultURIprefix(prURI);
 		doc.setTypesInURIs(true);
 		doc.addNamespace(URI.create(prURI), prURI);
-		
-		//read in file to an SBOLDocument
+
+		// read in file to an SBOLDocument
 		doc.read(resourceAsStream);
-		
-		//convert to BioPax
+
+		// convert to BioPax
 		factory = BioPAXLevel.L3.getDefaultFactory();
 		model = factory.createModel();
 		model.setXmlBase(prURI);
-		
+
 		BioPAXIOHandler io = new SimpleIOHandler();
 
 		// convert CDs to PhysicalEntities
-		for(ComponentDefinition cd : doc.getComponentDefinitions())
-		{
-			//make a BioPaxElement and add to model
-			//TODO: check to make sure that a cd does have at least one type 		
-			BioPAXElement elementToAdd = createPhysicalEntities(model, new URI(cd.getTypes().toArray()[0].toString()), cd.getIdentity());
-			if(elementToAdd != null){
-				System.out.println(elementToAdd);
-			}
-		}	
+		for (ComponentDefinition cd : doc.getComponentDefinitions()) {
+			// make a BioPaxElement and add to model
+			// TODO: check to make sure that a cd does have at least one type
+			createPhysicalEntities(model, new URI(cd.getTypes().toArray()[0].toString()), cd.getIdentity());
+		}
 		// convert ModuleDefinitions to Pathways
-		for(ModuleDefinition md : doc.getModuleDefinitions())
-		{
-			//each MD should have a new Pathway
+		for (ModuleDefinition md : doc.getModuleDefinitions()) {
+			// each MD should have a new Pathway
 			Pathway path = model.addNew(Pathway.class, md.getIdentity().toString());
-			//add interactions and physicalEntities to each pathway for that md
+			// add interactions and physicalEntities to each pathway for that md
 			createInteractions(md, path);
-			//iterate through modules within that md and create a nested pathway
+			for (Module module : md.getModules()) {
+				for (Pathway p : model.getObjects(Pathway.class)) {
+					if (p.getRDFId().equals(module.getDefinition())) {
+						path.addPathwayComponent(p);
+					}
+				}
+			}
 		}
 		// convert Participations to Genes
+		io.convertToOWL(model, new FileOutputStream("BiopaxOutput.owl"));
 	}
 
-	
-	
-	private static void createInteractions(ModuleDefinition md, Pathway path)
-	{
-		//conversion of Interactions only support the ontology terms as specified in SBOL Spec 
-		for(org.sbolstandard.core2.Interaction interaction: md.getInteractions())
-		{
+	private static void createInteractions(ModuleDefinition md, Pathway path) {
+		// conversion of Interactions only support the ontology terms as
+		// specified in SBOL Spec
+		for (org.sbolstandard.core2.Interaction interaction : md.getInteractions()) {
 			Interaction intToCreate = null;
-			if(interaction.equals(URI.create("http://identifiers.org/biomodels.sbo/SBO:0000169")))
-				intToCreate = model.addNew(GeneticInteraction.class, interaction.getIdentity().toString());
-			else if (interaction.equals(URI.create("http://identifiers.org/biomodels.sbo/SBO:0000170")))
-				intToCreate = model.addNew(GeneticInteraction.class, interaction.getIdentity().toString());
-			else if(interaction.equals(URI.create("http://identifiers.org/biomodels.sbo/SBO:0000176")))
-				intToCreate = model.addNew(BiochemicalReaction.class, interaction.getIdentity().toString());
-			else if(interaction.equals(URI.create("http://identifiers.org/biomodels.sbo/SBO:0000177")))
-				intToCreate = model.addNew(GeneticInteraction.class, interaction.getIdentity().toString());
-			else if(interaction.equals(URI.create("http://identifiers.org/biomodels.sbo/SBO:0000179")))
-				intToCreate = model.addNew(GeneticInteraction.class, interaction.getIdentity().toString());			
-			else if(interaction.equals(URI.create("http://identifiers.org/biomodels.sbo/SBO:0000589")))
-				intToCreate = model.addNew(GeneticInteraction.class, interaction.getIdentity().toString());			
-			path.addPathwayComponent(intToCreate);	
+			for (URI type : interaction.getTypes()) {
+				if (type.equals(URI.create("http://identifiers.org/biomodels.sbo/SBO:0000169")))
+					intToCreate = model.addNew(GeneticInteraction.class, interaction.getIdentity().toString());
+				else if (type.equals(URI.create("http://identifiers.org/biomodels.sbo/SBO:0000170")))
+					intToCreate = model.addNew(GeneticInteraction.class, interaction.getIdentity().toString());
+				else if (type.equals(URI.create("http://identifiers.org/biomodels.sbo/SBO:0000176")))
+					intToCreate = model.addNew(BiochemicalReaction.class, interaction.getIdentity().toString());
+				else if (type.equals(URI.create("http://identifiers.org/biomodels.sbo/SBO:0000177")))
+					intToCreate = model.addNew(GeneticInteraction.class, interaction.getIdentity().toString());
+				else if (type.equals(URI.create("http://identifiers.org/biomodels.sbo/SBO:0000179")))
+					intToCreate = model.addNew(GeneticInteraction.class, interaction.getIdentity().toString());
+				else if (type.equals(URI.create("http://identifiers.org/biomodels.sbo/SBO:0000589")))
+					intToCreate = model.addNew(GeneticInteraction.class, interaction.getIdentity().toString());
+			}
+			path.addPathwayComponent(intToCreate);
+			// add the physical entities of each participation to the pathway
+			for (Participation p : interaction.getParticipations()) {
+				for (physicalEntity pe : model.getObjects(physicalEntity.class)) {
+					System.out.println(pe.getRDFId());
+					if (pe.getRDFId().equals(p.getParticipantDefinition().getIdentity().toString())) {
+						intToCreate.addParticipant((Entity) pe);
+					}
+				}
+			}
 		}
-		//for(Module module : md.getModules())
 	}
-	
-	
+	private static BioPAXElement createPhysicalEntities(Model model, URI cdType, URI identity) {
+		BioPAXElement entityToCreate = null;
+		if (cdType.equals(ComponentDefinition.PROTEIN))
+			entityToCreate = model.addNew(Protein.class, identity.toString());
+		else if (cdType.equals(ComponentDefinition.DNA))
+			entityToCreate = model.addNew(DnaRegion.class, identity.toString());
+		else if (cdType.equals(ComponentDefinition.SMALL_MOLECULE))
+			entityToCreate = model.addNew(SmallMolecule.class, identity.toString());
+		else if (cdType.equals(ComponentDefinition.RNA))
+			entityToCreate = model.addNew(Rna.class, identity.toString());
+		else if (cdType.equals(ComponentDefinition.COMPLEX))
+			entityToCreate = model.addNew(Complex.class, identity.toString());
 
-private static BioPAXElement createPhysicalEntities(Model model, URI cdType, URI identity)
-		{
-			BioPAXElement entityToCreate = null;
-			if(cdType.equals(ComponentDefinition.PROTEIN))
-				entityToCreate = model.addNew(Protein.class, identity.toString());
-			else if(cdType.equals(ComponentDefinition.DNA))
-				entityToCreate = model.addNew(DnaRegion.class, identity.toString());
-			else if(cdType.equals(ComponentDefinition.SMALL_MOLECULE))
-				entityToCreate = model.addNew(SmallMolecule.class, identity.toString());
-			else if(cdType.equals(ComponentDefinition.RNA))
-				entityToCreate = model.addNew(Rna.class, identity.toString());
-			else if(cdType.equals(ComponentDefinition.COMPLEX))
-				entityToCreate = model.addNew(Complex.class, identity.toString());
-			
-			return entityToCreate;
-			
-		}
+		return entityToCreate;
+
+	}
 
 }

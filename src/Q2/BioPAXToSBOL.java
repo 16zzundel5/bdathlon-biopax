@@ -14,6 +14,7 @@ import org.biopax.paxtools.model.BioPAXLevel;
 import org.biopax.paxtools.model.Model;
 import org.biopax.paxtools.model.level2.protein;
 import org.biopax.paxtools.model.level3.BioSource;
+import org.biopax.paxtools.model.level3.CellVocabulary;
 import org.biopax.paxtools.model.level3.Complex;
 import org.biopax.paxtools.model.level3.Dna;
 import org.biopax.paxtools.model.level3.Entity;
@@ -25,6 +26,7 @@ import org.biopax.paxtools.model.level3.PhysicalEntity;
 import org.biopax.paxtools.model.level3.Protein;
 import org.biopax.paxtools.model.level3.Rna;
 import org.biopax.paxtools.model.level3.SmallMolecule;
+import org.biopax.paxtools.model.level3.TissueVocabulary;
 import org.sbolstandard.core2.AccessType;
 import org.sbolstandard.core2.ComponentDefinition;
 import org.sbolstandard.core2.DirectionType;
@@ -46,7 +48,7 @@ import java.util.Set;
 /**
  * Converter from BioPAX level 3 to SBOL 2.0
  * 
- * @author Michael Zhang
+ * @author Michael Zhang, Meher Samineni, Zach Zundel
  */
 public class BioPAXToSBOL {
 	static Map<Object, URI> entityMap = new HashMap<Object, URI>();
@@ -72,7 +74,7 @@ public class BioPAXToSBOL {
 		entityMap.put(ComplexImpl.class, ComponentDefinition.COMPLEX);
 		entityMap.put(SmallMoleculeImpl.class, ComponentDefinition.SMALL_MOLECULE);
 
-		// TODO correctness
+		// TODO correctness of mapping???
 		// inhibition
 		interactionMap.put("MI:0623", URI.create("http://identifiers.org/biomodels.sbo/SBO:0000169"));
 		// stimulation
@@ -101,7 +103,7 @@ public class BioPAXToSBOL {
 			convertGene(doc, model, gene);
 		}
 		for (Pathway pathway : model.getObjects(Pathway.class)) {
-			convertPathways(doc, model, pathway);
+			convertPathway(doc, model, pathway);
 		}
 
 		return doc;
@@ -121,32 +123,35 @@ public class BioPAXToSBOL {
 		// TODO unsure if this is the proper way to handle genes
 		ComponentDefinition cd = doc.createComponentDefinition(getNameFromRDFId(gene.getRDFId(), model.getXmlBase()),
 				"1", entityMap.get(gene.getClass()));
-		// BioSource organism = gene.getOrganism();
-		// cd.setDescription("This is an organism of tissue: " +
-		// organism.getTissue().getTerm().toString()
-		// + "and of cell type: " +
-		// organism.getCellType().getTerm().toString());
+		BioSource organism = gene.getOrganism();
+		cd.setDescription(organismToString(organism));
 	}
 
-	private static void convertPathways(SBOLDocument doc, Model model, Pathway pathway) throws SBOLValidationException {
-		ModuleDefinition md = doc.createModuleDefinition(getNameFromRDFId(pathway.getRDFId(), model.getXmlBase()), "1");
-		// BioSource organism = pathway.getOrganism();
-		// // TODO null pointer
-		// md.setDescription("This is an organism of tissue: " +
-		// organism.getTissue().getTerm().toString()
-		// + "and of cell type: " +
-		// organism.getCellType().getTerm().toString());
-		for (org.biopax.paxtools.model.level3.Process process : pathway.getPathwayComponent()) {
-			convertProcess(model, md, process);
+	private static ModuleDefinition convertPathway(SBOLDocument doc, Model model, Pathway pathway)
+			throws SBOLValidationException {
+		// return if this pathway has already been converted
+		ModuleDefinition md = doc.getModuleDefinition(getNameFromRDFId(pathway.getRDFId(), model.getXmlBase()), "1");
+		if (md != null) {
+			return md;
 		}
+
+		md = doc.createModuleDefinition(getNameFromRDFId(pathway.getRDFId(), model.getXmlBase()), "1");
+		BioSource organism = pathway.getOrganism();
+		md.setDescription(organismToString(organism));
+		for (org.biopax.paxtools.model.level3.Process process : pathway.getPathwayComponent()) {
+			convertProcess(doc, model, md, process);
+		}
+		return md;
 	}
 
-	private static void convertProcess(Model model, ModuleDefinition md,
+	private static void convertProcess(SBOLDocument doc, Model model, ModuleDefinition md,
 			org.biopax.paxtools.model.level3.Process process) throws SBOLValidationException {
 		if (process instanceof Interaction) {
 			convertInteraction(model, md, (Interaction) process);
 		} else if (process instanceof Pathway) {
-			// TODO nested Pathway
+			ModuleDefinition nestedMD = convertPathway(doc, model, (Pathway) process);
+			md.createModule(getNameFromRDFId(process.getRDFId(), model.getXmlBase()) + "Module",
+					nestedMD.getIdentity());
 		} else {
 			System.out.println("Process unable to be handled");
 		}
@@ -154,6 +159,7 @@ public class BioPAXToSBOL {
 
 	private static void convertInteraction(Model model, ModuleDefinition md, Interaction interaction)
 			throws SBOLValidationException {
+		// TODO roles need to be determined
 		Set<InteractionVocabulary> types = interaction.getInteractionType();
 		URI role;
 		if (!types.isEmpty()) {
@@ -175,5 +181,21 @@ public class BioPAXToSBOL {
 					getNameFromRDFId(participant.getRDFId(), model.getXmlBase()) + "Participant", fc.getIdentity(),
 					URI.create("whatgoeshere"));
 		}
+	}
+
+	private static String organismToString(BioSource organism) {
+		String description = "";
+		if (organism != null) {
+			TissueVocabulary tissue = organism.getTissue();
+			if (tissue != null) {
+				description = description + "This is an organism of tissue: " + tissue.toString();
+			}
+
+			CellVocabulary cell = organism.getCellType();
+			if (cell != null) {
+				description = description + "This is an organism of cell type: " + cell.toString();
+			}
+		}
+		return description;
 	}
 }
