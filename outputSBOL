@@ -1,0 +1,272 @@
+<?xml version="1.0" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sbol="http://sbols.org/v2#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prov="http://www.w3.org/ns/prov#">
+  <sbol:ModuleDefinition rdf:about="http://www.humanmetabolism.org/#LacI_Inverter/1">
+    <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter"/>
+    <sbol:displayId>LacI_Inverter</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <dcterms:description></dcterms:description>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://www.humanmetabolism.org/#LacI_Inverter/TetRFC/1">
+        <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/TetRFC"/>
+        <sbol:displayId>TetRFC</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://www.humanmetabolism.org/#TetR"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetRFC/1">
+        <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetRFC"/>
+        <sbol:displayId>pLac_prod_GFP_pLac_prod_TetRFC</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://www.humanmetabolism.org/#pLac_prod_GFP_pLac_prod_TetR"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://www.humanmetabolism.org/#LacI_Inverter/LacIFC/1">
+        <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/LacIFC"/>
+        <sbol:displayId>LacIFC</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://www.humanmetabolism.org/#LacI"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://www.humanmetabolism.org/#LacI_Inverter/GFPFC/1">
+        <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/GFPFC"/>
+        <sbol:displayId>GFPFC</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://www.humanmetabolism.org/#GFP"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://www.humanmetabolism.org/#LacI_Inverter/pLacFC/1">
+        <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/pLacFC"/>
+        <sbol:displayId>pLacFC</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://www.humanmetabolism.org/#pLac"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetR__LacI/1">
+        <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetR__LacI"/>
+        <sbol:displayId>pLac_prod_GFP_pLac_prod_TetR__LacI</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:type rdf:resource="Whatgoeshere"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetR__LacI/pLac_prod_GFP_pLac_prod_TetRParticipant/1">
+            <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetR__LacI/pLac_prod_GFP_pLac_prod_TetRParticipant"/>
+            <sbol:displayId>pLac_prod_GFP_pLac_prod_TetRParticipant</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:role rdf:resource="whatgoeshere"/>
+            <sbol:participant rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetRFC/1"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetR__LacI/LacIParticipant/1">
+            <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetR__LacI/LacIParticipant"/>
+            <sbol:displayId>LacIParticipant</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:role rdf:resource="whatgoeshere"/>
+            <sbol:participant rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/LacIFC/1"/>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetR/1">
+        <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetR"/>
+        <sbol:displayId>pLac_prod_GFP_pLac_prod_TetR</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:type rdf:resource="Whatgoeshere"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetR/pLacParticipant/1">
+            <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetR/pLacParticipant"/>
+            <sbol:displayId>pLacParticipant</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:role rdf:resource="whatgoeshere"/>
+            <sbol:participant rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/pLacFC/1"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetR/TetRParticipant/1">
+            <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetR/TetRParticipant"/>
+            <sbol:displayId>TetRParticipant</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:role rdf:resource="whatgoeshere"/>
+            <sbol:participant rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/TetRFC/1"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetR/GFPParticipant/1">
+            <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/pLac_prod_GFP_pLac_prod_TetR/GFPParticipant"/>
+            <sbol:displayId>GFPParticipant</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:role rdf:resource="whatgoeshere"/>
+            <sbol:participant rdf:resource="http://www.humanmetabolism.org/#LacI_Inverter/GFPFC/1"/>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://www.humanmetabolism.org/#TetR_Inverter/1">
+    <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter"/>
+    <sbol:displayId>TetR_Inverter</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <dcterms:description></dcterms:description>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://www.humanmetabolism.org/#TetR_Inverter/P0FC/1">
+        <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter/P0FC"/>
+        <sbol:displayId>P0FC</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://www.humanmetabolism.org/#P0"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://www.humanmetabolism.org/#TetR_Inverter/TetRFC/1">
+        <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter/TetRFC"/>
+        <sbol:displayId>TetRFC</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://www.humanmetabolism.org/#TetR"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://www.humanmetabolism.org/#TetR_Inverter/LacIFC/1">
+        <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter/LacIFC"/>
+        <sbol:displayId>LacIFC</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://www.humanmetabolism.org/#LacI"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacIFC/1">
+        <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacIFC"/>
+        <sbol:displayId>P0_prod_LacIFC</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:definition rdf:resource="http://www.humanmetabolism.org/#P0_prod_LacI"/>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacI__TetR/1">
+        <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacI__TetR"/>
+        <sbol:displayId>P0_prod_LacI__TetR</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:type rdf:resource="Whatgoeshere"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacI__TetR/TetRParticipant/1">
+            <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacI__TetR/TetRParticipant"/>
+            <sbol:displayId>TetRParticipant</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:role rdf:resource="whatgoeshere"/>
+            <sbol:participant rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter/TetRFC/1"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacI__TetR/P0_prod_LacIParticipant/1">
+            <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacI__TetR/P0_prod_LacIParticipant"/>
+            <sbol:displayId>P0_prod_LacIParticipant</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:role rdf:resource="whatgoeshere"/>
+            <sbol:participant rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacIFC/1"/>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+    <sbol:interaction>
+      <sbol:Interaction rdf:about="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacI/1">
+        <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacI"/>
+        <sbol:displayId>P0_prod_LacI</sbol:displayId>
+        <sbol:version>1</sbol:version>
+        <sbol:type rdf:resource="Whatgoeshere"/>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacI/LacIParticipant/1">
+            <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacI/LacIParticipant"/>
+            <sbol:displayId>LacIParticipant</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:role rdf:resource="whatgoeshere"/>
+            <sbol:participant rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter/LacIFC/1"/>
+          </sbol:Participation>
+        </sbol:participation>
+        <sbol:participation>
+          <sbol:Participation rdf:about="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacI/P0Participant/1">
+            <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter/P0_prod_LacI/P0Participant"/>
+            <sbol:displayId>P0Participant</sbol:displayId>
+            <sbol:version>1</sbol:version>
+            <sbol:role rdf:resource="whatgoeshere"/>
+            <sbol:participant rdf:resource="http://www.humanmetabolism.org/#TetR_Inverter/P0FC/1"/>
+          </sbol:Participation>
+        </sbol:participation>
+      </sbol:Interaction>
+    </sbol:interaction>
+  </sbol:ModuleDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.humanmetabolism.org/#TetR_aTc/1">
+    <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#TetR_aTc"/>
+    <sbol:displayId>TetR_aTc</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Complex"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.humanmetabolism.org/#LacI/1">
+    <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI"/>
+    <sbol:displayId>LacI</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.humanmetabolism.org/#IPTG/1">
+    <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#IPTG"/>
+    <sbol:displayId>IPTG</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#SmallMolecule"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.humanmetabolism.org/#TetR/1">
+    <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#TetR"/>
+    <sbol:displayId>TetR</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.humanmetabolism.org/#LacI_IPTG/1">
+    <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#LacI_IPTG"/>
+    <sbol:displayId>LacI_IPTG</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Complex"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.humanmetabolism.org/#pLac/1">
+    <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#pLac"/>
+    <sbol:displayId>pLac</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.humanmetabolism.org/#GFP/1">
+    <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#GFP"/>
+    <sbol:displayId>GFP</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#Protein"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.humanmetabolism.org/#P0/1">
+    <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#P0"/>
+    <sbol:displayId>P0</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://www.humanmetabolism.org/#aTc/1">
+    <sbol:persistentIdentity rdf:resource="http://www.humanmetabolism.org/#aTc"/>
+    <sbol:displayId>aTc</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#SmallMolecule"/>
+  </sbol:ComponentDefinition>
+</rdf:RDF>
