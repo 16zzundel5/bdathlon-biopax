@@ -1,0 +1,1281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" arrays:required="true" comp:required="true" fbc:required="false" layout:required="false" level="3" version="1" xmlns:arrays="http://www.sbml.org/sbml/level3/version1/arrays/version1" xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1">
+  <comp:listOfModelDefinitions xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1">
+    <comp:modelDefinition id="LacI_Inverter" metaid="LacI_Inverter__iBioSim25">
+      <annotation>
+      <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+          <rdf:Description rdf:about="#iBioSim1">
+            <mts:ModuleDefinitions>
+              <rdf:Bag>
+                <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/LacI_Inverter"/></rdf:Bag></mts:ModuleDefinitions></rdf:Description></rdf:RDF></ModelToSBOL>
+    </annotation>
+          <comp:listOfPorts>
+        <comp:port comp:id="compartment__Cell" comp:idRef="Cell" sboTerm="SBO:0000601"/>
+        <comp:port comp:id="input__LacI" comp:idRef="LacI" sboTerm="SBO:0000600"/>
+        <comp:port comp:id="output__TetR" comp:idRef="TetR" sboTerm="SBO:0000601"/>
+        <comp:port comp:id="output__GFP" comp:idRef="GFP" sboTerm="SBO:0000601"/>
+      </comp:listOfPorts>
+      <layout:listOfLayouts xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <layout:layout layout:id="LacI_Inverter__iBioSim">
+          <layout:dimensions layout:depth="0" layout:height="425" layout:width="1070"/>
+          <layout:listOfCompartmentGlyphs>
+            <layout:compartmentGlyph layout:compartment="Cell" layout:id="Glyph__Cell">
+              <layout:boundingBox>
+                <layout:position layout:x="0" layout:y="0"/>
+                <layout:dimensions layout:height="425" layout:width="1070"/>
+              </layout:boundingBox>
+            </layout:compartmentGlyph>
+          </layout:listOfCompartmentGlyphs>
+          <layout:listOfSpeciesGlyphs>
+            <layout:speciesGlyph layout:id="Glyph__pLac" layout:species="pLac">
+              <layout:boundingBox>
+                <layout:position layout:x="65" layout:y="82.955078125"/>
+                <layout:dimensions layout:height="30" layout:width="100"/>
+              </layout:boundingBox>
+            </layout:speciesGlyph>
+            <layout:speciesGlyph layout:id="Glyph__LacI" layout:species="LacI">
+              <layout:boundingBox>
+                <layout:position layout:x="65" layout:y="1.4775390625"/>
+                <layout:dimensions layout:height="40" layout:width="40"/>
+              </layout:boundingBox>
+            </layout:speciesGlyph>
+            <layout:speciesGlyph layout:id="Glyph__TetR" layout:species="TetR">
+              <layout:boundingBox>
+                <layout:position layout:x="130" layout:y="188.91015625"/>
+                <layout:dimensions layout:height="40" layout:width="40"/>
+              </layout:boundingBox>
+            </layout:speciesGlyph>
+            <layout:speciesGlyph layout:id="Glyph__GFP" layout:species="GFP">
+              <layout:boundingBox>
+                <layout:position layout:x="0" layout:y="188.91015625"/>
+                <layout:dimensions layout:height="40" layout:width="40"/>
+              </layout:boundingBox>
+            </layout:speciesGlyph>
+          </layout:listOfSpeciesGlyphs>
+          <layout:listOfReactionGlyphs>
+            <layout:reactionGlyph layout:id="Glyph__pLac__Production__GFP">
+              <layout:boundingBox>
+                <layout:position layout:x="20" layout:y="208.91015625"/>
+                <layout:dimensions layout:height="0" layout:width="0"/>
+              </layout:boundingBox>
+              <layout:listOfSpeciesReferenceGlyphs>
+                <layout:speciesReferenceGlyph layout:id="ReferenceGlyph__pLac__Production__GFP" layout:role="product" layout:speciesGlyph="Glyph__GFP">
+                  <layout:curve>
+                    <layout:listOfCurveSegments>
+                      <layout:curveSegment xsi:type="LineSegment">
+                        <layout:start layout:x="115" layout:y="97.955078125"/>
+                        <layout:end layout:x="20" layout:y="208.91015625"/>
+                      </layout:curveSegment>
+                    </layout:listOfCurveSegments>
+                  </layout:curve>
+                </layout:speciesReferenceGlyph>
+              </layout:listOfSpeciesReferenceGlyphs>
+            </layout:reactionGlyph>
+            <layout:reactionGlyph layout:id="Glyph__pLac__Production__TetR">
+              <layout:boundingBox>
+                <layout:position layout:x="150" layout:y="208.91015625"/>
+                <layout:dimensions layout:height="0" layout:width="0"/>
+              </layout:boundingBox>
+              <layout:listOfSpeciesReferenceGlyphs>
+                <layout:speciesReferenceGlyph layout:id="ReferenceGlyph__pLac__Production__TetR" layout:role="product" layout:speciesGlyph="Glyph__TetR">
+                  <layout:curve>
+                    <layout:listOfCurveSegments>
+                      <layout:curveSegment xsi:type="LineSegment">
+                        <layout:start layout:x="115" layout:y="97.955078125"/>
+                        <layout:end layout:x="150" layout:y="208.91015625"/>
+                      </layout:curveSegment>
+                    </layout:listOfCurveSegments>
+                  </layout:curve>
+                </layout:speciesReferenceGlyph>
+              </layout:listOfSpeciesReferenceGlyphs>
+            </layout:reactionGlyph>
+            <layout:reactionGlyph layout:id="Glyph__LacI__repression__pLac">
+              <layout:boundingBox>
+                <layout:position layout:x="115" layout:y="97.955078125"/>
+                <layout:dimensions layout:height="0" layout:width="0"/>
+              </layout:boundingBox>
+              <layout:listOfSpeciesReferenceGlyphs>
+                <layout:speciesReferenceGlyph layout:id="ReferenceGlyph__LacI__repression__pLac" layout:role="product" layout:speciesGlyph="Glyph__pLac">
+                  <layout:curve>
+                    <layout:listOfCurveSegments>
+                      <layout:curveSegment xsi:type="LineSegment">
+                        <layout:start layout:x="85" layout:y="21.4775390625"/>
+                        <layout:end layout:x="115" layout:y="97.955078125"/>
+                      </layout:curveSegment>
+                    </layout:listOfCurveSegments>
+                  </layout:curve>
+                </layout:speciesReferenceGlyph>
+              </layout:listOfSpeciesReferenceGlyphs>
+            </layout:reactionGlyph>
+          </layout:listOfReactionGlyphs>
+          <layout:listOfTextGlyphs>
+            <layout:textGlyph layout:graphicalObject="Glyph__pLac" layout:id="TextGlyph__pLac" layout:text="pLac">
+              <layout:boundingBox>
+                <layout:position layout:x="65" layout:y="82.955078125"/>
+                <layout:dimensions layout:height="30" layout:width="100"/>
+              </layout:boundingBox>
+            </layout:textGlyph>
+            <layout:textGlyph layout:graphicalObject="Glyph__Cell" layout:id="TextGlyph__Cell" layout:text="Cell">
+              <layout:boundingBox>
+                <layout:position layout:x="0" layout:y="0"/>
+                <layout:dimensions layout:height="425" layout:width="1070"/>
+              </layout:boundingBox>
+            </layout:textGlyph>
+            <layout:textGlyph layout:graphicalObject="Glyph__LacI" layout:id="TextGlyph__LacI" layout:text="LacI">
+              <layout:boundingBox>
+                <layout:position layout:x="65" layout:y="1.4775390625"/>
+                <layout:dimensions layout:height="30" layout:width="100"/>
+              </layout:boundingBox>
+            </layout:textGlyph>
+            <layout:textGlyph layout:graphicalObject="Glyph__TetR" layout:id="TextGlyph__TetR" layout:text="TetR">
+              <layout:boundingBox>
+                <layout:position layout:x="130" layout:y="188.91015625"/>
+                <layout:dimensions layout:height="30" layout:width="100"/>
+              </layout:boundingBox>
+            </layout:textGlyph>
+            <layout:textGlyph layout:graphicalObject="Glyph__GFP" layout:id="TextGlyph__GFP" layout:text="GFP">
+              <layout:boundingBox>
+                <layout:position layout:x="0" layout:y="188.91015625"/>
+                <layout:dimensions layout:height="30" layout:width="100"/>
+              </layout:boundingBox>
+            </layout:textGlyph>
+          </layout:listOfTextGlyphs>
+        </layout:layout>
+      </layout:listOfLayouts>
+      <listOfCompartments>
+        <compartment constant="true" id="Cell" size="1" spatialDimensions="3"/>
+      </listOfCompartments>
+      <listOfSpecies>
+        <species boundaryCondition="true" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="LacI" initialAmount="0" metaid="LacI_Inverter__iBioSim2" sboTerm="SBO:0000252">
+          <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim2">
+                <mts:DNAComponents>
+                  <rdf:Seq>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/cd/LacI_Inverter__LacI"/></rdf:Seq></mts:DNAComponents><mts:Strand>+</mts:Strand></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+                </species>
+        <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="TetR" initialAmount="0" metaid="LacI_Inverter__iBioSim3" sboTerm="SBO:0000252">
+          <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim3">
+                <mts:DNAComponents>
+                  <rdf:Seq>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/cd/LacI_Inverter__TetR"/></rdf:Seq></mts:DNAComponents><mts:Strand>+</mts:Strand></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+                </species>
+        <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="GFP" initialAmount="0" metaid="LacI_Inverter__iBioSim4" sboTerm="SBO:0000252">
+          <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim4">
+                <mts:DNAComponents>
+                  <rdf:Seq>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/cd/LacI_Inverter__GFP"/></rdf:Seq></mts:DNAComponents><mts:Strand>+</mts:Strand></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+                </species>
+        <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="pLac" initialAmount="2" metaid="LacI_Inverter__iBioSim5" sboTerm="SBO:0000590">
+          <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim5">
+                <mts:ComponentDefinitions>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/LacI_Inverter_Gene/1"/></rdf:Bag></mts:ComponentDefinitions><mts:FunctionalComponents>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/LacI_Inverter_Gene/1"/></rdf:Bag></mts:FunctionalComponents><mts:DNAComponents>
+                  <rdf:Seq>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/LacI_Inverter_Gene/1"/></rdf:Seq></mts:DNAComponents><mts:Strand>+</mts:Strand></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+                </species>
+      </listOfSpecies>
+      <listOfParameters>
+        <parameter constant="true" id="kr_f" metaid="LacI_Inverter__iBioSim1" name="Forward repression binding rate" value="0.5"/>
+        <parameter constant="true" id="kr_r" metaid="LacI_Inverter__iBioSim11" name="Reverse repression binding rate" value="1"/>
+        <parameter constant="true" id="ka_f" metaid="LacI_Inverter__iBioSim12" name="Forward activation binding rate" value="0.0033"/>
+        <parameter constant="true" id="ka_r" metaid="LacI_Inverter__iBioSim13" name="Reverse activation binding rate" value="1"/>
+        <parameter constant="true" id="ko_f" metaid="LacI_Inverter__iBioSim14" name="Forward RNAP binding rate" value="0.033"/>
+        <parameter constant="true" id="ko_r" metaid="LacI_Inverter__iBioSim15" name="Reverse RNAP binding rate" value="1"/>
+        <parameter constant="true" id="kao_f" metaid="LacI_Inverter__iBioSim16" name="Forward activated RNAP binding rate" value="1"/>
+        <parameter constant="true" id="kao_r" metaid="LacI_Inverter__iBioSim17" name="Reverse activated RNAP binding rate" value="1"/>
+        <parameter constant="true" id="nc" metaid="LacI_Inverter__iBioSim18" name="Stoichiometry of binding" value="2"/>
+        <parameter constant="true" id="nr" metaid="LacI_Inverter__iBioSim19" name="Initial RNAP count" value="30"/>
+        <parameter constant="true" id="ko" metaid="LacI_Inverter__iBioSim20" name="Open complex production rate" value="0.05"/>
+        <parameter constant="true" id="kb" metaid="LacI_Inverter__iBioSim21" name="Basal production rate" value="0.0001"/>
+        <parameter constant="true" id="ng" metaid="LacI_Inverter__iBioSim22" name="Initial promoter count" value="2"/>
+        <parameter constant="true" id="np" metaid="LacI_Inverter__iBioSim23" name="Stoichiometry of production" value="10"/>
+        <parameter constant="true" id="ka" metaid="LacI_Inverter__iBioSim24" name="Activated production rate" value="0.25"/>
+      </listOfParameters>
+      <listOfReactions>
+        <reaction compartment="Cell" fast="false" id="pLac_prod_GFP_pLac_prod_TetR" metaid="LacI_Inverter__iBioSim6" reversible="false" sboTerm="SBO:0000589">
+          <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim6">
+                <mts:Interactions>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/LacI_Inverter/pLac_prod_GFP"/><rdf:li rdf:resource="http://www.async.ece.utah.edu/md/LacI_Inverter/pLac_prod_TetR"/><rdf:li rdf:resource="http://www.async.ece.utah.edu/md/LacI_Inverter/LacI_rep_pLac"/></rdf:Bag></mts:Interactions></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+                  <listOfProducts>
+            <speciesReference constant="true" metaid="LacI_Inverter__iBioSim8" species="GFP" stoichiometry="10">
+              <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim8">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/LacI_Inverter/GFP"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                        </speciesReference>
+            <speciesReference constant="true" metaid="LacI_Inverter__iBioSim9" species="TetR" stoichiometry="10">
+              <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim9">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/LacI_Inverter/TetR"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                        </speciesReference>
+          </listOfProducts>
+          <listOfModifiers>
+            <modifierSpeciesReference sboTerm="SBO:0000598" species="pLac">
+              <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/LacI_Inverter/pLac_prod_GFP/pLac"/><rdf:li rdf:resource="http://www.async.ece.utah.edu/md/LacI_Inverter/pLac_prod_TetR/pLac"/><rdf:li rdf:resource="http://www.async.ece.utah.edu/md/LacI_Inverter/LacI_rep_pLac/pLac"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                        </modifierSpeciesReference>
+            <modifierSpeciesReference metaid="LacI_Inverter__iBioSim7" sboTerm="SBO:0000020" species="LacI">
+              <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim7">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/LacI_Inverter/LacI"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                        </modifierSpeciesReference>
+          </listOfModifiers>
+          <kineticLaw>
+            <math xmlns="http://www.w3.org/1998/Math/MathML">            
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <times/>
+                      <ci> pLac </ci>
+                      <ci> ko </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> ko_f </ci>
+                      <ci> ko_r </ci>
+                    </apply>
+                  </apply>
+                  <ci> nr </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <divide/>
+                        <ci> ko_f </ci>
+                        <ci> ko_r </ci>
+                      </apply>
+                      <ci> nr </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <divide/>
+                        <ci> kr_f </ci>
+                        <ci> kr_r </ci>
+                      </apply>
+                      <ci> LacI </ci>
+                    </apply>
+                    <ci> nc </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </math>
+                    </kineticLaw>
+        </reaction>
+      </listOfReactions>
+    </comp:modelDefinition>
+    <comp:modelDefinition id="TetR_Inverter" metaid="TetR_Inverter__iBioSim23">
+      <annotation>
+      <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+          <rdf:Description rdf:about="#iBioSim1">
+            <mts:ModuleDefinitions>
+              <rdf:Bag>
+                <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/TetR_Inverter"/></rdf:Bag></mts:ModuleDefinitions></rdf:Description></rdf:RDF></ModelToSBOL>
+    </annotation>
+          <comp:listOfPorts>
+        <comp:port comp:id="compartment__Cell" comp:idRef="Cell" sboTerm="SBO:0000601"/>
+        <comp:port comp:id="input__TetR" comp:idRef="TetR" sboTerm="SBO:0000600"/>
+        <comp:port comp:id="output__LacI" comp:idRef="LacI" sboTerm="SBO:0000601"/>
+      </comp:listOfPorts>
+      <layout:listOfLayouts xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <layout:layout layout:id="TetR_Inverter__iBioSim">
+          <layout:dimensions layout:depth="0" layout:height="425" layout:width="1070"/>
+          <layout:listOfCompartmentGlyphs>
+            <layout:compartmentGlyph layout:compartment="Cell" layout:id="Glyph__Cell">
+              <layout:boundingBox>
+                <layout:position layout:x="0" layout:y="0"/>
+                <layout:dimensions layout:height="425" layout:width="1070"/>
+              </layout:boundingBox>
+            </layout:compartmentGlyph>
+          </layout:listOfCompartmentGlyphs>
+          <layout:listOfSpeciesGlyphs>
+            <layout:speciesGlyph layout:id="Glyph__P0" layout:species="P0">
+              <layout:boundingBox>
+                <layout:position layout:x="0" layout:y="82.955078125"/>
+                <layout:dimensions layout:height="30" layout:width="100"/>
+              </layout:boundingBox>
+            </layout:speciesGlyph>
+            <layout:speciesGlyph layout:id="Glyph__TetR" layout:species="TetR">
+              <layout:boundingBox>
+                <layout:position layout:x="0" layout:y="1.4775390625"/>
+                <layout:dimensions layout:height="40" layout:width="40"/>
+              </layout:boundingBox>
+            </layout:speciesGlyph>
+            <layout:speciesGlyph layout:id="Glyph__LacI" layout:species="LacI">
+              <layout:boundingBox>
+                <layout:position layout:x="0" layout:y="188.91015625"/>
+                <layout:dimensions layout:height="40" layout:width="40"/>
+              </layout:boundingBox>
+            </layout:speciesGlyph>
+          </layout:listOfSpeciesGlyphs>
+          <layout:listOfReactionGlyphs>
+            <layout:reactionGlyph layout:id="Glyph__P0__Production__LacI">
+              <layout:boundingBox>
+                <layout:position layout:x="20" layout:y="208.91015625"/>
+                <layout:dimensions layout:height="0" layout:width="0"/>
+              </layout:boundingBox>
+              <layout:listOfSpeciesReferenceGlyphs>
+                <layout:speciesReferenceGlyph layout:id="ReferenceGlyph__P0__Production__LacI" layout:role="product" layout:speciesGlyph="Glyph__LacI">
+                  <layout:curve>
+                    <layout:listOfCurveSegments>
+                      <layout:curveSegment xsi:type="LineSegment">
+                        <layout:start layout:x="50" layout:y="97.955078125"/>
+                        <layout:end layout:x="20" layout:y="208.91015625"/>
+                      </layout:curveSegment>
+                    </layout:listOfCurveSegments>
+                  </layout:curve>
+                </layout:speciesReferenceGlyph>
+              </layout:listOfSpeciesReferenceGlyphs>
+            </layout:reactionGlyph>
+            <layout:reactionGlyph layout:id="Glyph__TetR__repression__P0">
+              <layout:boundingBox>
+                <layout:position layout:x="50" layout:y="97.955078125"/>
+                <layout:dimensions layout:height="0" layout:width="0"/>
+              </layout:boundingBox>
+              <layout:listOfSpeciesReferenceGlyphs>
+                <layout:speciesReferenceGlyph layout:id="ReferenceGlyph__TetR__repression__P0" layout:role="product" layout:speciesGlyph="Glyph__P0">
+                  <layout:curve>
+                    <layout:listOfCurveSegments>
+                      <layout:curveSegment xsi:type="LineSegment">
+                        <layout:start layout:x="20" layout:y="21.4775390625"/>
+                        <layout:end layout:x="50" layout:y="97.955078125"/>
+                      </layout:curveSegment>
+                    </layout:listOfCurveSegments>
+                  </layout:curve>
+                </layout:speciesReferenceGlyph>
+              </layout:listOfSpeciesReferenceGlyphs>
+            </layout:reactionGlyph>
+          </layout:listOfReactionGlyphs>
+          <layout:listOfTextGlyphs>
+            <layout:textGlyph layout:graphicalObject="Glyph__P0" layout:id="TextGlyph__P0" layout:text="P0">
+              <layout:boundingBox>
+                <layout:position layout:x="0" layout:y="82.955078125"/>
+                <layout:dimensions layout:height="30" layout:width="100"/>
+              </layout:boundingBox>
+            </layout:textGlyph>
+            <layout:textGlyph layout:graphicalObject="Glyph__Cell" layout:id="TextGlyph__Cell" layout:text="Cell">
+              <layout:boundingBox>
+                <layout:position layout:x="0" layout:y="0"/>
+                <layout:dimensions layout:height="425" layout:width="1070"/>
+              </layout:boundingBox>
+            </layout:textGlyph>
+            <layout:textGlyph layout:graphicalObject="Glyph__TetR" layout:id="TextGlyph__TetR" layout:text="TetR">
+              <layout:boundingBox>
+                <layout:position layout:x="0" layout:y="1.4775390625"/>
+                <layout:dimensions layout:height="30" layout:width="100"/>
+              </layout:boundingBox>
+            </layout:textGlyph>
+            <layout:textGlyph layout:graphicalObject="Glyph__LacI" layout:id="TextGlyph__LacI" layout:text="LacI">
+              <layout:boundingBox>
+                <layout:position layout:x="0" layout:y="188.91015625"/>
+                <layout:dimensions layout:height="30" layout:width="100"/>
+              </layout:boundingBox>
+            </layout:textGlyph>
+          </layout:listOfTextGlyphs>
+        </layout:layout>
+      </layout:listOfLayouts>
+      <listOfCompartments>
+        <compartment constant="true" id="Cell" size="1" spatialDimensions="3"/>
+      </listOfCompartments>
+      <listOfSpecies>
+        <species boundaryCondition="true" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="TetR" initialAmount="0" metaid="TetR_Inverter__iBioSim2" sboTerm="SBO:0000252">
+          <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim2">
+                <mts:DNAComponents>
+                  <rdf:Seq>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/cd/TetR_Inverter__TetR"/></rdf:Seq></mts:DNAComponents><mts:Strand>+</mts:Strand></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+                </species>
+        <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="LacI" initialAmount="0" metaid="TetR_Inverter__iBioSim3" sboTerm="SBO:0000252">
+          <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim3">
+                <mts:DNAComponents>
+                  <rdf:Seq>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/cd/TetR_Inverter__LacI"/></rdf:Seq></mts:DNAComponents><mts:Strand>+</mts:Strand></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+                </species>
+        <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="P0" initialAmount="2" metaid="TetR_Inverter__iBioSim4" sboTerm="SBO:0000590">
+          <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim4">
+                <mts:ComponentDefinitions>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/TetR_Inverter_Gene/1"/></rdf:Bag></mts:ComponentDefinitions><mts:FunctionalComponents>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/TetR_Inverter_Gene/1"/></rdf:Bag></mts:FunctionalComponents><mts:DNAComponents>
+                  <rdf:Seq>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/TetR_Inverter_Gene/1"/></rdf:Seq></mts:DNAComponents><mts:Strand>+</mts:Strand></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+                </species>
+      </listOfSpecies>
+      <listOfParameters>
+        <parameter constant="true" id="kr_f" metaid="TetR_Inverter__iBioSim1" name="Forward repression binding rate" value="0.5"/>
+        <parameter constant="true" id="kr_r" metaid="TetR_Inverter__iBioSim9" name="Reverse repression binding rate" value="1"/>
+        <parameter constant="true" id="ka_f" metaid="TetR_Inverter__iBioSim10" name="Forward activation binding rate" value="0.0033"/>
+        <parameter constant="true" id="ka_r" metaid="TetR_Inverter__iBioSim11" name="Reverse activation binding rate" value="1"/>
+        <parameter constant="true" id="ko_f" metaid="TetR_Inverter__iBioSim12" name="Forward RNAP binding rate" value="0.033"/>
+        <parameter constant="true" id="ko_r" metaid="TetR_Inverter__iBioSim13" name="Reverse RNAP binding rate" value="1"/>
+        <parameter constant="true" id="kao_f" metaid="TetR_Inverter__iBioSim14" name="Forward activated RNAP binding rate" value="1"/>
+        <parameter constant="true" id="kao_r" metaid="TetR_Inverter__iBioSim15" name="Reverse activated RNAP binding rate" value="1"/>
+        <parameter constant="true" id="nc" metaid="TetR_Inverter__iBioSim16" name="Stoichiometry of binding" value="2"/>
+        <parameter constant="true" id="nr" metaid="TetR_Inverter__iBioSim17" name="Initial RNAP count" value="30"/>
+        <parameter constant="true" id="ko" metaid="TetR_Inverter__iBioSim18" name="Open complex production rate" value="0.05"/>
+        <parameter constant="true" id="kb" metaid="TetR_Inverter__iBioSim19" name="Basal production rate" value="0.0001"/>
+        <parameter constant="true" id="ng" metaid="TetR_Inverter__iBioSim20" name="Initial promoter count" value="2"/>
+        <parameter constant="true" id="np" metaid="TetR_Inverter__iBioSim21" name="Stoichiometry of production" value="10"/>
+        <parameter constant="true" id="ka" metaid="TetR_Inverter__iBioSim22" name="Activated production rate" value="0.25"/>
+      </listOfParameters>
+      <listOfReactions>
+        <reaction compartment="Cell" fast="false" id="P0_prod_LacI" metaid="TetR_Inverter__iBioSim5" reversible="false" sboTerm="SBO:0000589">
+          <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim5">
+                <mts:Interactions>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/TetR_Inverter/P0_prod_LacI"/><rdf:li rdf:resource="http://www.async.ece.utah.edu/md/TetR_Inverter/TetR_rep_P0"/></rdf:Bag></mts:Interactions></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+                  <listOfProducts>
+            <speciesReference constant="true" metaid="TetR_Inverter__iBioSim7" species="LacI" stoichiometry="10">
+              <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim7">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/TetR_Inverter/LacI"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                        </speciesReference>
+          </listOfProducts>
+          <listOfModifiers>
+            <modifierSpeciesReference sboTerm="SBO:0000598" species="P0">
+              <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/TetR_Inverter/P0_prod_LacI/P0"/><rdf:li rdf:resource="http://www.async.ece.utah.edu/md/TetR_Inverter/TetR_rep_P0/P0"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                        </modifierSpeciesReference>
+            <modifierSpeciesReference metaid="TetR_Inverter__iBioSim6" sboTerm="SBO:0000020" species="TetR">
+              <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim6">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/TetR_Inverter/TetR"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                        </modifierSpeciesReference>
+          </listOfModifiers>
+          <kineticLaw>
+            <math xmlns="http://www.w3.org/1998/Math/MathML">            
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <times/>
+                      <ci> P0 </ci>
+                      <ci> ko </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> ko_f </ci>
+                      <ci> ko_r </ci>
+                    </apply>
+                  </apply>
+                  <ci> nr </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <divide/>
+                        <ci> ko_f </ci>
+                        <ci> ko_r </ci>
+                      </apply>
+                      <ci> nr </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <divide/>
+                        <ci> kr_f </ci>
+                        <ci> kr_r </ci>
+                      </apply>
+                      <ci> TetR </ci>
+                    </apply>
+                    <ci> nc </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </math>
+                    </kineticLaw>
+        </reaction>
+      </listOfReactions>
+    </comp:modelDefinition>
+  </comp:listOfModelDefinitions>
+  <model id="GeneticToggle" metaid="iBioSim22">
+    <annotation>
+      <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+          <rdf:Description rdf:about="#iBioSim1">
+            <mts:ModuleDefinitions>
+              <rdf:Bag>
+                <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle"/></rdf:Bag></mts:ModuleDefinitions></rdf:Description></rdf:RDF></ModelToSBOL>
+    </annotation>
+      <comp:listOfSubmodels xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1">
+      <comp:submodel comp:id="C1" comp:modelRef="LacI_Inverter" metaid="iBioSim26">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim22">
+                <mts:Modules>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/LacI_Inverter"/></rdf:Bag></mts:Modules></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+            </comp:submodel>
+      <comp:submodel comp:id="C2" comp:modelRef="TetR_Inverter" metaid="iBioSim29">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim26">
+                <mts:Modules>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/TetR_Inverter"/></rdf:Bag></mts:Modules></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+            </comp:submodel>
+    </comp:listOfSubmodels>
+    <comp:listOfPorts xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1">
+      <comp:port comp:id="compartment__Cell" comp:idRef="Cell" sboTerm="SBO:0000601"/>
+      <comp:port comp:id="output__LacI" comp:idRef="LacI" sboTerm="SBO:0000601"/>
+      <comp:port comp:id="output__GFP" comp:idRef="GFP" sboTerm="SBO:0000601"/>
+      <comp:port comp:id="output__TetR" comp:idRef="TetR" sboTerm="SBO:0000601"/>
+      <comp:port comp:id="Degradation_TetR" comp:idRef="Degradation_TetR" sboTerm="SBO:0000601"/>
+      <comp:port comp:id="Degradation_GFP" comp:idRef="Degradation_GFP" sboTerm="SBO:0000601"/>
+      <comp:port comp:id="Degradation_LacI" comp:idRef="Degradation_LacI" sboTerm="SBO:0000601"/>
+    </comp:listOfPorts>
+    <layout:listOfLayouts xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <layout:layout layout:id="iBioSim">
+        <layout:dimensions layout:depth="0" layout:height="425" layout:width="1070"/>
+        <layout:listOfAdditionalGraphicalObjects>
+          <layout:generalGlyph layout:id="Glyph__C1" layout:reference="C1">
+            <layout:boundingBox>
+              <layout:position layout:x="208" layout:y="82.955078125"/>
+              <layout:dimensions layout:height="40" layout:width="80"/>
+            </layout:boundingBox>
+          </layout:generalGlyph>
+          <layout:generalGlyph layout:id="Glyph__C2" layout:reference="C2">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="89.91015625"/>
+              <layout:dimensions layout:height="40" layout:width="80"/>
+            </layout:boundingBox>
+          </layout:generalGlyph>
+        </layout:listOfAdditionalGraphicalObjects>
+        <layout:listOfCompartmentGlyphs>
+          <layout:compartmentGlyph layout:compartment="Cell" layout:id="Glyph__Cell">
+            <layout:boundingBox>
+              <layout:position layout:x="0" layout:y="0"/>
+              <layout:dimensions layout:height="425" layout:width="1070"/>
+            </layout:boundingBox>
+          </layout:compartmentGlyph>
+        </layout:listOfCompartmentGlyphs>
+        <layout:listOfSpeciesGlyphs>
+          <layout:speciesGlyph layout:id="Glyph__IPTG" layout:species="IPTG">
+            <layout:boundingBox>
+              <layout:position layout:x="75" layout:y="1.4775390625"/>
+              <layout:dimensions layout:height="20" layout:width="20"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="Glyph__LacI" layout:species="LacI">
+            <layout:boundingBox>
+              <layout:position layout:x="205" layout:y="1.4775390625"/>
+              <layout:dimensions layout:height="40" layout:width="40"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="Glyph__LacI_IPTG" layout:species="LacI_IPTG">
+            <layout:boundingBox>
+              <layout:position layout:x="75" layout:y="87.955078125"/>
+              <layout:dimensions layout:height="30" layout:width="100"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="Glyph__aTc" layout:species="aTc">
+            <layout:boundingBox>
+              <layout:position layout:x="0" layout:y="174.4326171875"/>
+              <layout:dimensions layout:height="20" layout:width="20"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="Glyph__TetR_aTc" layout:species="TetR_aTc">
+            <layout:boundingBox>
+              <layout:position layout:x="90" layout:y="260.91015625"/>
+              <layout:dimensions layout:height="30" layout:width="100"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="Glyph__GFP" layout:species="GFP">
+            <layout:boundingBox>
+              <layout:position layout:x="130" layout:y="174.4326171875"/>
+              <layout:dimensions layout:height="40" layout:width="40"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+          <layout:speciesGlyph layout:id="Glyph__TetR" layout:species="TetR">
+            <layout:boundingBox>
+              <layout:position layout:x="260" layout:y="174.4326171875"/>
+              <layout:dimensions layout:height="40" layout:width="40"/>
+            </layout:boundingBox>
+          </layout:speciesGlyph>
+        </layout:listOfSpeciesGlyphs>
+        <layout:listOfReactionGlyphs>
+          <layout:reactionGlyph layout:id="Glyph__LacI__complex__LacI_IPTG">
+            <layout:boundingBox>
+              <layout:position layout:x="125" layout:y="102.955078125"/>
+              <layout:dimensions layout:height="0" layout:width="0"/>
+            </layout:boundingBox>
+            <layout:listOfSpeciesReferenceGlyphs>
+              <layout:speciesReferenceGlyph layout:id="ReferenceGlyph__LacI__complex__LacI_IPTG" layout:role="product" layout:speciesGlyph="Glyph__LacI_IPTG">
+                <layout:curve>
+                  <layout:listOfCurveSegments>
+                    <layout:curveSegment xsi:type="LineSegment">
+                      <layout:start layout:x="225" layout:y="21.4775390625"/>
+                      <layout:end layout:x="125" layout:y="102.955078125"/>
+                    </layout:curveSegment>
+                  </layout:listOfCurveSegments>
+                </layout:curve>
+              </layout:speciesReferenceGlyph>
+            </layout:listOfSpeciesReferenceGlyphs>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="Glyph__IPTG__complex__LacI_IPTG">
+            <layout:boundingBox>
+              <layout:position layout:x="125" layout:y="102.955078125"/>
+              <layout:dimensions layout:height="0" layout:width="0"/>
+            </layout:boundingBox>
+            <layout:listOfSpeciesReferenceGlyphs>
+              <layout:speciesReferenceGlyph layout:id="ReferenceGlyph__IPTG__complex__LacI_IPTG" layout:role="product" layout:speciesGlyph="Glyph__LacI_IPTG">
+                <layout:curve>
+                  <layout:listOfCurveSegments>
+                    <layout:curveSegment xsi:type="LineSegment">
+                      <layout:start layout:x="85" layout:y="11.4775390625"/>
+                      <layout:end layout:x="125" layout:y="102.955078125"/>
+                    </layout:curveSegment>
+                  </layout:listOfCurveSegments>
+                </layout:curve>
+              </layout:speciesReferenceGlyph>
+            </layout:listOfSpeciesReferenceGlyphs>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="Glyph__TetR__complex__TetR_aTc">
+            <layout:boundingBox>
+              <layout:position layout:x="140" layout:y="275.91015625"/>
+              <layout:dimensions layout:height="0" layout:width="0"/>
+            </layout:boundingBox>
+            <layout:listOfSpeciesReferenceGlyphs>
+              <layout:speciesReferenceGlyph layout:id="ReferenceGlyph__TetR__complex__TetR_aTc" layout:role="product" layout:speciesGlyph="Glyph__TetR_aTc">
+                <layout:curve>
+                  <layout:listOfCurveSegments>
+                    <layout:curveSegment xsi:type="LineSegment">
+                      <layout:start layout:x="280" layout:y="194.4326171875"/>
+                      <layout:end layout:x="140" layout:y="275.91015625"/>
+                    </layout:curveSegment>
+                  </layout:listOfCurveSegments>
+                </layout:curve>
+              </layout:speciesReferenceGlyph>
+            </layout:listOfSpeciesReferenceGlyphs>
+          </layout:reactionGlyph>
+          <layout:reactionGlyph layout:id="Glyph__aTc__complex__TetR_aTc">
+            <layout:boundingBox>
+              <layout:position layout:x="140" layout:y="275.91015625"/>
+              <layout:dimensions layout:height="0" layout:width="0"/>
+            </layout:boundingBox>
+            <layout:listOfSpeciesReferenceGlyphs>
+              <layout:speciesReferenceGlyph layout:id="ReferenceGlyph__aTc__complex__TetR_aTc" layout:role="product" layout:speciesGlyph="Glyph__TetR_aTc">
+                <layout:curve>
+                  <layout:listOfCurveSegments>
+                    <layout:curveSegment xsi:type="LineSegment">
+                      <layout:start layout:x="10" layout:y="184.4326171875"/>
+                      <layout:end layout:x="140" layout:y="275.91015625"/>
+                    </layout:curveSegment>
+                  </layout:listOfCurveSegments>
+                </layout:curve>
+              </layout:speciesReferenceGlyph>
+            </layout:listOfSpeciesReferenceGlyphs>
+          </layout:reactionGlyph>
+        </layout:listOfReactionGlyphs>
+        <layout:listOfTextGlyphs>
+          <layout:textGlyph layout:graphicalObject="Glyph__C1" layout:id="TextGlyph__C1" layout:text="C1">
+            <layout:boundingBox>
+              <layout:position layout:x="208" layout:y="82.955078125"/>
+              <layout:dimensions layout:height="40" layout:width="80"/>
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__C2" layout:id="TextGlyph__C2" layout:text="C2">
+            <layout:boundingBox>
+              <layout:position layout:x="490" layout:y="89.91015625"/>
+              <layout:dimensions layout:height="40" layout:width="80"/>
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__Cell" layout:id="TextGlyph__Cell" layout:text="Cell">
+            <layout:boundingBox>
+              <layout:position layout:x="0" layout:y="0"/>
+              <layout:dimensions layout:height="425" layout:width="1070"/>
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__IPTG" layout:id="TextGlyph__IPTG" layout:text="IPTG">
+            <layout:boundingBox>
+              <layout:position layout:x="75" layout:y="1.4775390625"/>
+              <layout:dimensions layout:height="30" layout:width="100"/>
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__LacI" layout:id="TextGlyph__LacI" layout:text="LacI">
+            <layout:boundingBox>
+              <layout:position layout:x="205" layout:y="1.4775390625"/>
+              <layout:dimensions layout:height="30" layout:width="100"/>
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__LacI_IPTG" layout:id="TextGlyph__LacI_IPTG" layout:text="LacI_IPTG">
+            <layout:boundingBox>
+              <layout:position layout:x="75" layout:y="87.955078125"/>
+              <layout:dimensions layout:height="30" layout:width="100"/>
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__aTc" layout:id="TextGlyph__aTc" layout:text="aTc">
+            <layout:boundingBox>
+              <layout:position layout:x="0" layout:y="174.4326171875"/>
+              <layout:dimensions layout:height="30" layout:width="100"/>
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__TetR_aTc" layout:id="TextGlyph__TetR_aTc" layout:text="TetR_aTc">
+            <layout:boundingBox>
+              <layout:position layout:x="90" layout:y="260.91015625"/>
+              <layout:dimensions layout:height="30" layout:width="100"/>
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__GFP" layout:id="TextGlyph__GFP" layout:text="GFP">
+            <layout:boundingBox>
+              <layout:position layout:x="130" layout:y="174.4326171875"/>
+              <layout:dimensions layout:height="30" layout:width="100"/>
+            </layout:boundingBox>
+          </layout:textGlyph>
+          <layout:textGlyph layout:graphicalObject="Glyph__TetR" layout:id="TextGlyph__TetR" layout:text="TetR">
+            <layout:boundingBox>
+              <layout:position layout:x="260" layout:y="174.4326171875"/>
+              <layout:dimensions layout:height="30" layout:width="100"/>
+            </layout:boundingBox>
+          </layout:textGlyph>
+        </layout:listOfTextGlyphs>
+      </layout:layout>
+    </layout:listOfLayouts>
+    <listOfCompartments>
+      <compartment constant="true" id="Cell" size="1" spatialDimensions="3">
+        <comp:listOfReplacedElements xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1">
+          <comp:replacedElement comp:portRef="compartment__Cell" comp:submodelRef="C1"/>
+          <comp:replacedElement comp:portRef="compartment__Cell" comp:submodelRef="C2"/>
+        </comp:listOfReplacedElements>
+      </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="IPTG" initialAmount="0" metaid="iBioSim2" sboTerm="SBO:0000247">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim2">
+                <mts:DNAComponents>
+                  <rdf:Seq>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/cd/GeneticToggle__IPTG"/></rdf:Seq></mts:DNAComponents><mts:Strand>+</mts:Strand></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="LacI" initialAmount="0" metaid="iBioSim3" sboTerm="SBO:0000252">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim3">
+                <mts:DNAComponents>
+                  <rdf:Seq>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/cd/GeneticToggle__LacI"/></rdf:Seq></mts:DNAComponents><mts:Strand>+</mts:Strand></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+              <comp:listOfReplacedElements xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1">
+          <comp:replacedElement comp:portRef="input__LacI" comp:submodelRef="C1" metaid="iBioSim25">
+            <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim25">
+                    <mts:MapsTos>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/C1/LacI"/></rdf:Bag></mts:MapsTos></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                    </comp:replacedElement>
+        </comp:listOfReplacedElements>
+        <comp:replacedBy xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1" comp:portRef="output__LacI" comp:submodelRef="C2" metaid="iBioSim28">
+          <annotation>
+            <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:Description rdf:about="#iBioSim28">
+                  <mts:MapsTos>
+                    <rdf:Bag>
+                      <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/C2/LacI"/></rdf:Bag></mts:MapsTos></rdf:Description></rdf:RDF></ModelToSBOL>
+          </annotation>
+                </comp:replacedBy>
+      </species>
+      <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="LacI_IPTG" initialAmount="0" metaid="iBioSim4" sboTerm="SBO:0000253">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim4">
+                <mts:DNAComponents>
+                  <rdf:Seq>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/cd/GeneticToggle__LacI_IPTG"/></rdf:Seq></mts:DNAComponents><mts:Strand>+</mts:Strand></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="aTc" initialAmount="0" metaid="iBioSim5" sboTerm="SBO:0000247">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim5">
+                <mts:DNAComponents>
+                  <rdf:Seq>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/cd/GeneticToggle__aTc"/></rdf:Seq></mts:DNAComponents><mts:Strand>+</mts:Strand></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="TetR_aTc" initialAmount="0" metaid="iBioSim6" sboTerm="SBO:0000253">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim6">
+                <mts:DNAComponents>
+                  <rdf:Seq>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/cd/GeneticToggle__TetR_aTc"/></rdf:Seq></mts:DNAComponents><mts:Strand>+</mts:Strand></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="GFP" initialAmount="0" metaid="iBioSim7" sboTerm="SBO:0000252">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim7">
+                <mts:DNAComponents>
+                  <rdf:Seq>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/cd/GeneticToggle__GFP"/></rdf:Seq></mts:DNAComponents><mts:Strand>+</mts:Strand></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+              <comp:replacedBy xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1" comp:portRef="output__GFP" comp:submodelRef="C1" metaid="iBioSim23">
+          <annotation>
+            <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:Description rdf:about="#iBioSim23">
+                  <mts:MapsTos>
+                    <rdf:Bag>
+                      <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/C1/GFP"/></rdf:Bag></mts:MapsTos></rdf:Description></rdf:RDF></ModelToSBOL>
+          </annotation>
+                </comp:replacedBy>
+      </species>
+      <species boundaryCondition="false" compartment="Cell" constant="false" hasOnlySubstanceUnits="true" id="TetR" initialAmount="0" metaid="iBioSim8" sboTerm="SBO:0000252">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim8">
+                <mts:DNAComponents>
+                  <rdf:Seq>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/cd/GeneticToggle__TetR"/></rdf:Seq></mts:DNAComponents><mts:Strand>+</mts:Strand></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+              <comp:listOfReplacedElements xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1">
+          <comp:replacedElement comp:portRef="input__TetR" comp:submodelRef="C2" metaid="iBioSim27">
+            <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim27">
+                    <mts:MapsTos>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/C2/TetR"/></rdf:Bag></mts:MapsTos></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                    </comp:replacedElement>
+        </comp:listOfReplacedElements>
+        <comp:replacedBy xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1" comp:portRef="output__TetR" comp:submodelRef="C1" metaid="iBioSim24">
+          <annotation>
+            <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:Description rdf:about="#iBioSim24">
+                  <mts:MapsTos>
+                    <rdf:Bag>
+                      <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/C1/TetR"/></rdf:Bag></mts:MapsTos></rdf:Description></rdf:RDF></ModelToSBOL>
+          </annotation>
+                </comp:replacedBy>
+      </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter constant="true" id="kc_f" metaid="iBioSim1" name="Forward complex formation rate" value="0.05"/>
+      <parameter constant="true" id="kc_r" metaid="iBioSim30" name="Reverse complex formation rate" value="1"/>
+      <parameter constant="true" id="nc" metaid="iBioSim31" name="Stoichiometry of binding" value="2"/>
+      <parameter constant="true" id="kd" metaid="iBioSim32" name="Degradation rate" value="0.0075"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction compartment="Cell" fast="false" id="Complex_LacI_IPTG" metaid="iBioSim9" reversible="true" sboTerm="SBO:0000177">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim9">
+                <mts:Interactions>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/Complex_LacI_IPTG"/></rdf:Bag></mts:Interactions></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+              <listOfReactants>
+          <speciesReference constant="true" metaid="iBioSim11" species="LacI" stoichiometry="2">
+            <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim11">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/LacI"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                    </speciesReference>
+          <speciesReference constant="true" metaid="iBioSim12" species="IPTG" stoichiometry="2">
+            <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim12">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/IPTG"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                    </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" metaid="iBioSim10" species="LacI_IPTG" stoichiometry="1">
+            <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim10">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/LacI_IPTG"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                    </speciesReference>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <apply>
+                  <times/>
+                  <ci> kc_f </ci>
+                  <apply>
+                    <power/>
+                    <ci> LacI </ci>
+                    <ci> nc </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <power/>
+                  <ci> IPTG </ci>
+                  <ci> nc </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kc_r </ci>
+                <ci> LacI_IPTG </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction compartment="Cell" fast="false" id="Degradation_LacI_IPTG" metaid="iBioSim33" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#">
+                <mts:Interactions>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/Degradation_LacI_IPTG"/></rdf:Bag></mts:Interactions></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+              <listOfReactants>
+          <speciesReference constant="true" metaid="iBioSim13" species="LacI_IPTG" stoichiometry="1">
+            <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim13">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/LacI_IPTG"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                    </speciesReference>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kd </ci>
+              <ci> LacI_IPTG </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction compartment="Cell" fast="false" id="Degradation_TetR" metaid="iBioSim34" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#">
+                <mts:Interactions>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/Degradation_TetR"/></rdf:Bag></mts:Interactions></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+              <listOfReactants>
+          <speciesReference constant="true" metaid="iBioSim14" species="TetR" stoichiometry="1">
+            <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim14">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/TetR"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                    </speciesReference>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kd </ci>
+              <ci> TetR </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction compartment="Cell" fast="false" id="Complex_TetR_aTc" metaid="iBioSim15" reversible="true" sboTerm="SBO:0000177">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#iBioSim15">
+                <mts:Interactions>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/Complex_TetR_aTc"/></rdf:Bag></mts:Interactions></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+              <listOfReactants>
+          <speciesReference constant="true" metaid="iBioSim17" species="TetR" stoichiometry="2">
+            <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim17">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/TetR"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                    </speciesReference>
+          <speciesReference constant="true" metaid="iBioSim18" species="aTc" stoichiometry="2">
+            <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim18">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/aTc"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                    </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" metaid="iBioSim16" species="TetR_aTc" stoichiometry="1">
+            <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim16">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/TetR_aTc"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                    </speciesReference>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <apply>
+                  <times/>
+                  <ci> kc_f </ci>
+                  <apply>
+                    <power/>
+                    <ci> TetR </ci>
+                    <ci> nc </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <power/>
+                  <ci> aTc </ci>
+                  <ci> nc </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kc_r </ci>
+                <ci> TetR_aTc </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction compartment="Cell" fast="false" id="Degradation_TetR_aTc" metaid="iBioSim35" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#">
+                <mts:Interactions>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/Degradation_TetR_aTc"/></rdf:Bag></mts:Interactions></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+              <listOfReactants>
+          <speciesReference constant="true" metaid="iBioSim19" species="TetR_aTc" stoichiometry="1">
+            <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim19">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/TetR_aTc"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                    </speciesReference>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kd </ci>
+              <ci> TetR_aTc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction compartment="Cell" fast="false" id="Degradation_GFP" metaid="iBioSim36" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#">
+                <mts:Interactions>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/Degradation_GFP"/></rdf:Bag></mts:Interactions></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+              <listOfReactants>
+          <speciesReference constant="true" metaid="iBioSim20" species="GFP" stoichiometry="1">
+            <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim20">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/GFP"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                    </speciesReference>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kd </ci>
+              <ci> GFP </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction compartment="Cell" fast="false" id="Degradation_LacI" metaid="iBioSim37" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+          <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+              <rdf:Description rdf:about="#">
+                <mts:Interactions>
+                  <rdf:Bag>
+                    <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/Degradation_LacI"/></rdf:Bag></mts:Interactions></rdf:Description></rdf:RDF></ModelToSBOL>
+        </annotation>
+              <listOfReactants>
+          <speciesReference constant="true" metaid="iBioSim21" species="LacI" stoichiometry="1">
+            <annotation>
+              <ModelToSBOL xmlns="http://sbolstandard.org/modeltosbol/1.0#">
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mts="http://sbolstandard.org/modeltosbol/1.0#">
+                  <rdf:Description rdf:about="#iBioSim21">
+                    <mts:Participations>
+                      <rdf:Bag>
+                        <rdf:li rdf:resource="http://www.async.ece.utah.edu/md/GeneticToggle/LacI"/></rdf:Bag></mts:Participations></rdf:Description></rdf:RDF></ModelToSBOL>
+            </annotation>
+                    </speciesReference>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kd </ci>
+              <ci> LacI </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
