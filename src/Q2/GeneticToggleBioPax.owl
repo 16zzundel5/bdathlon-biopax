@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:owl="http://www.w3.org/2002/07/owl#"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+ xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#"
+ xml:base="http://www.humanmetabolism.org/#">
+<owl:Ontology rdf:about="">
+ <owl:imports rdf:resource="http://www.biopax.org/release/biopax-level3.owl#" />
+</owl:Ontology>
+
+<bp:Degradation rdf:ID="Degradation_TetR_aTc">
+ <bp:participantStoichiometry rdf:resource="#Degradation_TetR_aTc__TetR_aTc" />
+ <bp:spontaneous rdf:datatype = "http://www.w3.org/2001/XMLSchema#boolean">false</bp:spontaneous>
+ <bp:left rdf:resource="#TetR_aTc" />
+ <bp:conversionDirection rdf:datatype = "http://www.w3.org/2001/XMLSchema#string">LEFT_TO_RIGHT</bp:conversionDirection>
+</bp:Degradation>
+
+<bp:Protein rdf:ID="GFP">
+ <bp:cellularLocation rdf:resource="#Cell" />
+</bp:Protein>
+
+<bp:Pathway rdf:ID="LacI_Inverter">
+ <bp:pathwayComponent rdf:resource="#pLac_prod_GFP_pLac_prod_TetR" />
+ <bp:pathwayComponent rdf:resource="#pLac_prod_GFP_pLac_prod_TetR__LacI" />
+</bp:Pathway>
+
+<bp:Degradation rdf:ID="Degradation_TetR">
+ <bp:participantStoichiometry rdf:resource="#Degradation_TetR__TetR" />
+ <bp:spontaneous rdf:datatype = "http://www.w3.org/2001/XMLSchema#boolean">false</bp:spontaneous>
+ <bp:left rdf:resource="#TetR" />
+ <bp:conversionDirection rdf:datatype = "http://www.w3.org/2001/XMLSchema#string">LEFT_TO_RIGHT</bp:conversionDirection>
+</bp:Degradation>
+
+<bp:Stoichiometry rdf:ID="Complex_TetR_aTc__TetR_aTc">
+ <bp:physicalEntity rdf:resource="#TetR_aTc" />
+ <bp:stoichiometricCoefficient rdf:datatype = "http://www.w3.org/2001/XMLSchema#float">1.0</bp:stoichiometricCoefficient>
+</bp:Stoichiometry>
+
+<bp:Complex rdf:ID="LacI_IPTG">
+ <bp:cellularLocation rdf:resource="#Cell" />
+</bp:Complex>
+
+<bp:Stoichiometry rdf:ID="Complex_TetR_aTc__TetR">
+ <bp:physicalEntity rdf:resource="#TetR" />
+ <bp:stoichiometricCoefficient rdf:datatype = "http://www.w3.org/2001/XMLSchema#float">2.0</bp:stoichiometricCoefficient>
+</bp:Stoichiometry>
+
+<bp:Pathway rdf:ID="TetR_Inverter">
+ <bp:pathwayComponent rdf:resource="#P0_prod_LacI" />
+ <bp:pathwayComponent rdf:resource="#P0_prod_LacI__TetR" />
+</bp:Pathway>
+
+<bp:Stoichiometry rdf:ID="Complex_LacI_IPTG__LacI_IPTG">
+ <bp:physicalEntity rdf:resource="#LacI_IPTG" />
+ <bp:stoichiometricCoefficient rdf:datatype = "http://www.w3.org/2001/XMLSchema#float">1.0</bp:stoichiometricCoefficient>
+</bp:Stoichiometry>
+
+<bp:Stoichiometry rdf:ID="Degradation_LacI_IPTG__LacI_IPTG">
+ <bp:physicalEntity rdf:resource="#LacI_IPTG" />
+ <bp:stoichiometricCoefficient rdf:datatype = "http://www.w3.org/2001/XMLSchema#float">1.0</bp:stoichiometricCoefficient>
+</bp:Stoichiometry>
+
+<bp:Protein rdf:ID="LacI">
+ <bp:cellularLocation rdf:resource="#Cell" />
+</bp:Protein>
+
+<bp:SmallMolecule rdf:ID="IPTG">
+ <bp:cellularLocation rdf:resource="#Cell" />
+</bp:SmallMolecule>
+
+<bp:Degradation rdf:ID="Degradation_LacI">
+ <bp:participantStoichiometry rdf:resource="#Degradation_LacI__LacI" />
+ <bp:spontaneous rdf:datatype = "http://www.w3.org/2001/XMLSchema#boolean">false</bp:spontaneous>
+ <bp:left rdf:resource="#LacI" />
+ <bp:conversionDirection rdf:datatype = "http://www.w3.org/2001/XMLSchema#string">LEFT_TO_RIGHT</bp:conversionDirection>
+</bp:Degradation>
+
+<bp:ComplexAssembly rdf:ID="Complex_LacI_IPTG">
+ <bp:participantStoichiometry rdf:resource="#Complex_LacI_IPTG__LacI" />
+ <bp:participantStoichiometry rdf:resource="#Complex_LacI_IPTG__IPTG" />
+ <bp:participantStoichiometry rdf:resource="#Complex_LacI_IPTG__LacI_IPTG" />
+ <bp:right rdf:resource="#LacI_IPTG" />
+ <bp:spontaneous rdf:datatype = "http://www.w3.org/2001/XMLSchema#boolean">false</bp:spontaneous>
+ <bp:left rdf:resource="#LacI" />
+ <bp:left rdf:resource="#IPTG" />
+ <bp:conversionDirection rdf:datatype = "http://www.w3.org/2001/XMLSchema#string">REVERSIBLE</bp:conversionDirection>
+</bp:ComplexAssembly>
+
+<bp:Complex rdf:ID="TetR_aTc">
+ <bp:cellularLocation rdf:resource="#Cell" />
+</bp:Complex>
+
+<bp:Stoichiometry rdf:ID="Degradation_LacI__LacI">
+ <bp:physicalEntity rdf:resource="#LacI" />
+ <bp:stoichiometricCoefficient rdf:datatype = "http://www.w3.org/2001/XMLSchema#float">1.0</bp:stoichiometricCoefficient>
+</bp:Stoichiometry>
+
+<bp:DnaRegion rdf:ID="pLac">
+ <bp:cellularLocation rdf:resource="#Cell" />
+</bp:DnaRegion>
+
+<bp:SmallMolecule rdf:ID="aTc">
+ <bp:cellularLocation rdf:resource="#Cell" />
+</bp:SmallMolecule>
+
+<bp:Degradation rdf:ID="Degradation_GFP">
+ <bp:participantStoichiometry rdf:resource="#Degradation_GFP__GFP" />
+ <bp:spontaneous rdf:datatype = "http://www.w3.org/2001/XMLSchema#boolean">false</bp:spontaneous>
+ <bp:left rdf:resource="#GFP" />
+ <bp:conversionDirection rdf:datatype = "http://www.w3.org/2001/XMLSchema#string">LEFT_TO_RIGHT</bp:conversionDirection>
+</bp:Degradation>
+
+<bp:Protein rdf:ID="TetR">
+ <bp:cellularLocation rdf:resource="#Cell" />
+</bp:Protein>
+
+<bp:TemplateReactionRegulation rdf:ID="pLac_prod_GFP_pLac_prod_TetR__LacI">
+ <bp:controlled rdf:resource="#pLac_prod_GFP_pLac_prod_TetR" />
+ <bp:controller rdf:resource="#LacI" />
+ <bp:controlType rdf:datatype = "http://www.w3.org/2001/XMLSchema#string">INHIBITION</bp:controlType>
+</bp:TemplateReactionRegulation>
+
+<bp:TemplateReaction rdf:ID="pLac_prod_GFP_pLac_prod_TetR">
+ <bp:template rdf:resource="#pLac" />
+ <bp:product rdf:resource="#GFP" />
+ <bp:product rdf:resource="#TetR" />
+ <bp:participant rdf:resource="#pLac" />
+ <bp:participant rdf:resource="#GFP" />
+ <bp:participant rdf:resource="#TetR" />
+ <bp:templateDirection rdf:datatype = "http://www.w3.org/2001/XMLSchema#string">FORWARD</bp:templateDirection>
+</bp:TemplateReaction>
+
+<bp:Stoichiometry rdf:ID="Complex_TetR_aTc__aTc">
+ <bp:physicalEntity rdf:resource="#aTc" />
+ <bp:stoichiometricCoefficient rdf:datatype = "http://www.w3.org/2001/XMLSchema#float">2.0</bp:stoichiometricCoefficient>
+</bp:Stoichiometry>
+
+<bp:Stoichiometry rdf:ID="Degradation_TetR_aTc__TetR_aTc">
+ <bp:physicalEntity rdf:resource="#TetR_aTc" />
+ <bp:stoichiometricCoefficient rdf:datatype = "http://www.w3.org/2001/XMLSchema#float">1.0</bp:stoichiometricCoefficient>
+</bp:Stoichiometry>
+
+<bp:Stoichiometry rdf:ID="Degradation_GFP__GFP">
+ <bp:physicalEntity rdf:resource="#GFP" />
+ <bp:stoichiometricCoefficient rdf:datatype = "http://www.w3.org/2001/XMLSchema#float">1.0</bp:stoichiometricCoefficient>
+</bp:Stoichiometry>
+
+<bp:Stoichiometry rdf:ID="Complex_LacI_IPTG__LacI">
+ <bp:physicalEntity rdf:resource="#LacI" />
+ <bp:stoichiometricCoefficient rdf:datatype = "http://www.w3.org/2001/XMLSchema#float">2.0</bp:stoichiometricCoefficient>
+</bp:Stoichiometry>
+
+<bp:CellularLocationVocabulary rdf:ID="Cell">
+</bp:CellularLocationVocabulary>
+
+<bp:Stoichiometry rdf:ID="Complex_LacI_IPTG__IPTG">
+ <bp:physicalEntity rdf:resource="#IPTG" />
+ <bp:stoichiometricCoefficient rdf:datatype = "http://www.w3.org/2001/XMLSchema#float">2.0</bp:stoichiometricCoefficient>
+</bp:Stoichiometry>
+
+<bp:Stoichiometry rdf:ID="Degradation_TetR__TetR">
+ <bp:physicalEntity rdf:resource="#TetR" />
+ <bp:stoichiometricCoefficient rdf:datatype = "http://www.w3.org/2001/XMLSchema#float">1.0</bp:stoichiometricCoefficient>
+</bp:Stoichiometry>
+
+<bp:ComplexAssembly rdf:ID="Complex_TetR_aTc">
+ <bp:participantStoichiometry rdf:resource="#Complex_TetR_aTc__aTc" />
+ <bp:participantStoichiometry rdf:resource="#Complex_TetR_aTc__TetR_aTc" />
+ <bp:participantStoichiometry rdf:resource="#Complex_TetR_aTc__TetR" />
+ <bp:right rdf:resource="#TetR_aTc" />
+ <bp:spontaneous rdf:datatype = "http://www.w3.org/2001/XMLSchema#boolean">false</bp:spontaneous>
+ <bp:left rdf:resource="#aTc" />
+ <bp:left rdf:resource="#TetR" />
+ <bp:conversionDirection rdf:datatype = "http://www.w3.org/2001/XMLSchema#string">REVERSIBLE</bp:conversionDirection>
+</bp:ComplexAssembly>
+
+<bp:DnaRegion rdf:ID="P0">
+ <bp:cellularLocation rdf:resource="#Cell" />
+</bp:DnaRegion>
+
+<bp:TemplateReaction rdf:ID="P0_prod_LacI">
+ <bp:template rdf:resource="#P0" />
+ <bp:product rdf:resource="#LacI" />
+ <bp:participant rdf:resource="#LacI" />
+ <bp:participant rdf:resource="#P0" />
+ <bp:templateDirection rdf:datatype = "http://www.w3.org/2001/XMLSchema#string">FORWARD</bp:templateDirection>
+</bp:TemplateReaction>
+
+<bp:Degradation rdf:ID="Degradation_LacI_IPTG">
+ <bp:participantStoichiometry rdf:resource="#Degradation_LacI_IPTG__LacI_IPTG" />
+ <bp:spontaneous rdf:datatype = "http://www.w3.org/2001/XMLSchema#boolean">false</bp:spontaneous>
+ <bp:left rdf:resource="#LacI_IPTG" />
+ <bp:conversionDirection rdf:datatype = "http://www.w3.org/2001/XMLSchema#string">LEFT_TO_RIGHT</bp:conversionDirection>
+</bp:Degradation>
+
+<bp:TemplateReactionRegulation rdf:ID="P0_prod_LacI__TetR">
+ <bp:controlled rdf:resource="#P0_prod_LacI" />
+ <bp:controller rdf:resource="#TetR" />
+ <bp:controlType rdf:datatype = "http://www.w3.org/2001/XMLSchema#string">INHIBITION</bp:controlType>
+</bp:TemplateReactionRegulation>
+</rdf:RDF>
